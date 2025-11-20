@@ -57,7 +57,12 @@ private:
 	
 	sf::View mWorldView;
 	sf::View mHudView;
+	bool mTurningLeft = false;
+	bool mTurningRight = false;
+
 	float mScreenRotation;
+	float mTargetRotation;
+	float mRotationSpeed;
 	
 	sf::Text mPlayerHealthText;
 	sf::Font mFont;

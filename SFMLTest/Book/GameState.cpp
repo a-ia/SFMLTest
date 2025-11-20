@@ -5,6 +5,7 @@
 #include <SFML/Window/Keyboard.hpp>
 #include <SFML/Window/Mouse.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/System/Clock.hpp>
 #include <Book/Explosion.hpp>
 #include <cmath>
 #include <cstdlib>
@@ -12,6 +13,8 @@
 GameState::GameState(StateStack& stack, Context context)
 	: State(stack, context)
 	, mScreenRotation(0.f)
+	, mTargetRotation(0.f)      
+	, mRotationSpeed(180.f)
 	, mRandomGenerator(std::random_device{}())
 {
 	// Load textures
@@ -48,6 +51,7 @@ GameState::GameState(StateStack& stack, Context context)
 	mPlayerHealthText.setCharacterSize(20);
 	mPlayerHealthText.setFillColor(sf::Color::Black);
 	mPlayerHealthText.setPosition(10.f, 10.f);
+
 
 	// Spawn initial enemies
 	for (int i = 0; i < mMaxEnemies; ++i)
@@ -207,6 +211,8 @@ void GameState::draw()
 
 bool GameState::update(sf::Time dt)
 {
+	float dtSec = dt.asSeconds();
+
 	// Update player
 	mPlayer->update(dt);
 
@@ -228,6 +234,29 @@ bool GameState::update(sf::Time dt)
 			}
 		}
 	}
+
+	if (mTurningLeft)
+		mTargetRotation -= 120.f * dtSec;
+
+	if (mTurningRight)
+		mTargetRotation += 120.f * dtSec;
+
+
+	if (mTargetRotation >= 360.f) mTargetRotation -= 360.f;
+	if (mTargetRotation < 0.f)    mTargetRotation += 360.f;
+
+	float delta = mTargetRotation - mScreenRotation;
+
+	if (delta > 180.f)  delta -= 360.f;
+	if (delta < -180.f) delta += 360.f;
+
+	float maxStep = mRotationSpeed * dtSec;
+	if (std::abs(delta) < maxStep)
+		mScreenRotation = mTargetRotation;
+	else
+		mScreenRotation += (delta > 0 ? maxStep : -maxStep);
+
+	mWorldView.setRotation(mScreenRotation);
 
 	updateProjectiles(dt);
 	updateExplosions(dt);
@@ -483,22 +512,9 @@ bool GameState::isValidSpawnPosition(sf::Vector2f position)
 
 void GameState::handleScreenRotation(sf::Keyboard::Key key, bool isPressed)
 {
-	if (isPressed)
-	{
-		if (key == sf::Keyboard::LShift)
-		{
-			mScreenRotation -= 90.f;
-			if (mScreenRotation < 0.f)
-				mScreenRotation += 360.f;
-		}
-		else if (key == sf::Keyboard::Space)
-		{
-			mScreenRotation += 90.f;
-			if (mScreenRotation >= 360.f)
-				mScreenRotation -= 360.f;
-		}
-	}
+	if (key == sf::Keyboard::LShift)
+		mTurningLeft = isPressed;
+
+	if (key == sf::Keyboard::Space)
+		mTurningRight = isPressed;
 }
-
-
-
