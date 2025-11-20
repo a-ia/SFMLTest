@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Media">
+      <UniqueIdentifier>{f0cda303-171f-4e7b-955c-70226928f325}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Media\Music">
+      <UniqueIdentifier>{c39096d8-b55c-44bc-9b7b-067b62eb0d1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Book">
+      <UniqueIdentifier>{73a020d8-d539-4eb4-8a19-4017009b509e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Media\Textures">
+      <UniqueIdentifier>{74bb5a09-3962-442c-be7d-a8955d4bc341}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Media\Textures\sprites">
+      <UniqueIdentifier>{392e707e-bec0-451d-84b0-ffe0581fc991}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Media\Textures\sprites\players">
+      <UniqueIdentifier>{01bbe1bc-447e-48a6-9f66-5e2cd5954eeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Media\Textures\sprites\misc">
+      <UniqueIdentifier>{0b17c8fa-eff0-4688-ac99-a6c7642cca0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Media\Textures\sprites\players\evil_yokai">
+      <UniqueIdentifier>{bbf25fce-9116-4566-a79a-30dd0258b235}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Media\Textures\sprites\players\vengeful_yokai">
+      <UniqueIdentifier>{f9d82666-64f8-4960-a6bd-7ad88f5edc35}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Media\Music\pacman_intro.ogg">
+      <Filter>Media\Music</Filter>
+    </None>
+    <None Include="Book\StateStack.inl">
+      <Filter>Book</Filter>
+    </None>
+    <None Include="Book\ResourceHolder.inl">
+      <Filter>Book</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Book\Enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Book\Explosion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Book\Projectile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Book\EndState.cpp">
+      <Filter>Book</Filter>
+    </ClCompile>
+    <ClCompile Include="Book\GameOverState.cpp">
+      <Filter>Book</Filter>
+    </ClCompile>
+    <ClCompile Include="Book\GameState.cpp">
+      <Filter>Book</Filter>
+    </ClCompile>
+    <ClCompile Include="Book\MenuState.cpp">
+      <Filter>Book</Filter>
+    </ClCompile>
+    <ClCompile Include="Book\PauseState.cpp">
+      <Filter>Book</Filter>
+    </ClCompile>
+    <ClCompile Include="Book\Player.cpp">
+      <Filter>Book</Filter>
+    </ClCompile>
+    <ClCompile Include="Book\State.cpp">
+      <Filter>Book</Filter>
+    </ClCompile>
+    <ClCompile Include="Book\StateStack.cpp">
+      <Filter>Book</Filter>
+    </ClCompile>
+    <ClCompile Include="Book\TitleState.cpp">
+      <Filter>Book</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Media\Textures\sprites\misc\explosion.png">
+      <Filter>Media\Textures\sprites\misc</Filter>
+    </Image>
+    <Image Include="Media\Textures\sprites\players\vengeful_yokai\vengeful_yokai_attack.png">
+      <Filter>Media\Textures\sprites\players\vengeful_yokai</Filter>
+    </Image>
+    <Image Include="Media\Textures\sprites\players\vengeful_yokai\vengeful_yokai_projectile.png">
+      <Filter>Media\Textures\sprites\players\vengeful_yokai</Filter>
+    </Image>
+    <Image Include="Media\Textures\sprites\players\vengeful_yokai\vengeful_yokai_walk.png">
+      <Filter>Media\Textures\sprites\players\vengeful_yokai</Filter>
+    </Image>
+    <Image Include="Media\Textures\sprites\players\evil_yokai\evil_yokai_attack.png">
+      <Filter>Media\Textures\sprites\players\evil_yokai</Filter>
+    </Image>
+    <Image Include="Media\Textures\sprites\players\evil_yokai\evil_yokai_projectile.png">
+      <Filter>Media\Textures\sprites\players\evil_yokai</Filter>
+    </Image>
+    <Image Include="Media\Textures\sprites\players\evil_yokai\evil_yokai_walk.png">
+      <Filter>Media\Textures\sprites\players\evil_yokai</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Book\EndState.hpp">
+      <Filter>Book</Filter>
+    </ClInclude>
+    <ClInclude Include="Book\Enemy.hpp">
+      <Filter>Book</Filter>
+    </ClInclude>
+    <ClInclude Include="Book\Explosion.hpp">
+      <Filter>Book</Filter>
+    </ClInclude>
+    <ClInclude Include="Book\GameOverState.hpp">
+      <Filter>Book</Filter>
+    </ClInclude>
+    <ClInclude Include="Book\GameState.hpp">
+      <Filter>Book</Filter>
+    </ClInclude>
+    <ClInclude Include="Book\MenuState.hpp">
+      <Filter>Book</Filter>
+    </ClInclude>
+    <ClInclude Include="Book\PauseState.hpp">
+      <Filter>Book</Filter>
+    </ClInclude>
+    <ClInclude Include="Book\Player.hpp">
+      <Filter>Book</Filter>
+    </ClInclude>
+    <ClInclude Include="Book\Projectile.hpp">
+      <Filter>Book</Filter>
+    </ClInclude>
+    <ClInclude Include="Book\State.hpp">
+      <Filter>Book</Filter>
+    </ClInclude>
+    <ClInclude Include="Book\States.hpp">
+      <Filter>Book</Filter>
+    </ClInclude>
+    <ClInclude Include="Book\StateStack.hpp">
+      <Filter>Book</Filter>
+    </ClInclude>
+    <ClInclude Include="Book\TitleState.hpp">
+      <Filter>Book</Filter>
+    </ClInclude>
+    <ClInclude Include="Book\ResourceHolder.hpp">
+      <Filter>Book</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
